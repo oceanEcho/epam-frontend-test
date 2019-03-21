@@ -11,11 +11,44 @@
     <meta name="description" content="50 random people">
     <meta name="keywords" content="people, world, random" />
 
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
-    <div>Hello, world!</div>
+    <header>
+        <div id="updateBtn" class="btn">UPDATE</div>
+        <div class="sorting">
+            <select class="sorting-select" id="order">
+                <option value="default">DEFAULT</option>
+                <option value="alphabet">ALPHABET</option>
+                <option value="reverse">REVERSE</option>
+            </select>
+        </div>
+    </header>
+    <main>
+
+    </main>
+
+    <footer>
+        © Ivan Zaytsev, 2019
+    </footer>
+
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <img class="popup-content-img" src="" />
+            <div class="popup-content-info">
+                <div class="popup-content-name">Mr. First Last</div>
+                <div class="popup-content-location">Street: Smolenskaya st.</div>
+                <div class="popup-content-email">first@last.com</div>
+                <div class="popup-content-phone">+1998928937</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/Person.js"></script>
+    <script type="text/javascript" src="js/Popup.js"></script>
+    <script type="text/javascript" src="js/Fetcher.js"></script>
+    <script type="text/javascript" src="js/Renderer.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
