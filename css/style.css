@@ -143,6 +143,9 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    main {
+        justify-content: space-around;
+    }
     .popup-content {
         flex-direction: column;
         width: 80%;
