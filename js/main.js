@@ -25,13 +25,21 @@ const renderAll = () => {
             return response.json();
         })
         .then((response) => {
+
+            let addPersonHandlers = (personList, personArr, show) => {
+                personList = document.querySelectorAll('.person');
+
+                for (let i = 0; i < personList.length; i++) {
+                    personList[i].addEventListener('click', show.bind(popup, i, personArr));
+                }
+            };
+
             renderer.renderPeople(response.results, mainContent, personTemplate);
-
-            let personList = document.querySelectorAll('.person');
-
-            for (let i = 0; i < personList.length; i++) {
-                personList[i].addEventListener('click', popup.show.bind(popup, i, response.results));
-            }
+            addPersonHandlers(
+                document.querySelectorAll('.person'),
+                response.results,
+                popup.show
+            );
 
             let personArr = Array.prototype.slice.call(response.results);
 
@@ -39,6 +47,11 @@ const renderAll = () => {
                 if (sortingSelect.value === 'default') {
                     mainContent.innerHTML = '';
                     renderer.renderPeople(response.results, mainContent, personTemplate);
+                    addPersonHandlers(
+                        document.querySelectorAll('.person'),
+                        response.results,
+                        popup.show
+                    );
                 }
                 if (sortingSelect.value === 'alphabet') {
                     personArr.sort((a, b) => {
@@ -46,23 +59,21 @@ const renderAll = () => {
                     });
                     mainContent.innerHTML = '';
                     renderer.renderPeople(personArr, mainContent, personTemplate);
-
-                    personList = document.querySelectorAll('.person');
-
-                    for (let i = 0; i < personList.length; i++) {
-                        personList[i].addEventListener('click', popup.show.bind(popup, i, personArr));
-                    }
+                    addPersonHandlers(
+                        document.querySelectorAll('.person'),
+                        personArr,
+                        popup.show
+                    );
                 }
                 if (sortingSelect.value === 'reverse') {
                     personArr.reverse();
                     mainContent.innerHTML = '';
                     renderer.renderPeople(personArr, mainContent, personTemplate);
-
-                    personList = document.querySelectorAll('.person');
-
-                    for (let i = 0; i < personList.length; i++) {
-                        personList[i].addEventListener('click', popup.show.bind(popup, i, personArr));
-                    }
+                    addPersonHandlers(
+                        document.querySelectorAll('.person'),
+                        personArr,
+                        popup.show
+                    );
                 }
             });
         })
