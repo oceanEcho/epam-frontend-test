@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>50 random people</title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="application-name" content="RandomPeople" />
     <meta name="author" content="Ivan Zaytsev" />
-    <meta name="description" content="50 random people">
+    <meta name="description" content="50 random people" />
     <meta name="keywords" content="people, world, random" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-</head>
+  </head>
 
-<body>
-    <header>
+  <body>
+    <div class="container">
+      <header class="header">
         <div id="updateBtn" class="btn">UPDATE</div>
         <div class="sorting">
-            <select class="sorting-select" id="order">
-                <option value="default">DEFAULT</option>
-                <option value="alphabet">ALPHABET</option>
-                <option value="reverse">REVERSE</option>
-            </select>
+          <select class="sorting-select" id="order">
+            <option value="default">DEFAULT</option>
+            <option value="alphabet">ALPHABET</option>
+            <option value="reverse">REVERSE</option>
+          </select>
         </div>
-    </header>
-    <main>
+      </header>
+      <main class="main"></main>
 
-    </main>
+      <footer>© Ivan Zaytsev, 2019</footer>
 
-    <footer>
-        © Ivan Zaytsev, 2019
-    </footer>
-
-    <div class="popup-overlay">
+      <div class="popup-overlay">
         <div class="popup-content">
-            <img class="popup-content-img" src="" />
-            <div class="popup-content-info">
-                <div class="popup-content-name">Mr. First Last</div>
-                <div class="popup-content-location">Street: Smolenskaya st.</div>
-                <div class="popup-content-email">first@last.com</div>
-                <div class="popup-content-phone">+1998928937</div>
-            </div>
+          <img class="popup-content-img" src="" />
+          <div class="popup-content-info">
+            <div class="popup-content-name">Mr. First Last</div>
+            <div class="popup-content-location">Street: Smolenskaya st.</div>
+            <div class="popup-content-email">first@last.com</div>
+            <div class="popup-content-phone">+1998928937</div>
+          </div>
         </div>
+      </div>
     </div>
 
     <script type="text/javascript" src="js/Person.js"></script>
@@ -50,6 +47,5 @@
     <script type="text/javascript" src="js/Fetcher.js"></script>
     <script type="text/javascript" src="js/Renderer.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-</body>
-
+  </body>
 </html>
