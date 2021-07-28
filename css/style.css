@@ -35,6 +35,7 @@ body {
 
 .main {
   flex-grow: 1;
+  align-content: flex-start;
 }
 
 .btn {
@@ -121,7 +122,6 @@ main {
 
 .popup-content {
   display: flex;
-  margin-top: -30%;
   padding: 10px;
   background-color: white;
   border-radius: 2px;
